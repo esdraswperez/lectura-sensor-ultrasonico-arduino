@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "author": "ESDRAS WILFREDO PÉREZ COLOMA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 93, "left": 108.4, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 87, "left": -163.8, "attrs": {} },
+    { "type": "wokwi-hc-sr04", "id": "ultrasonic1", "top": -94.5, "left": 226.3, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -108.8,
+      "left": -128.8,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "uno:5V", "bb1:bp.1", "red", [ "v67.1", "h147.8", "v-9.6" ] ],
+    [ "uno:GND.2", "bb1:bn.2", "black", [ "v47.9", "h3.9" ] ],
+    [ "lcd1:GND", "bb1:tn.2", "black", [ "h-9.6", "v144", "h307.2" ] ],
+    [ "lcd1:VCC", "bb1:tp.1", "red", [ "h-19.2", "v105.7", "h19.2" ] ],
+    [ "ultrasonic1:VCC", "bb1:tp.15", "red", [ "v0" ] ],
+    [ "ultrasonic1:GND", "bb1:tn.17", "black", [ "v0" ] ],
+    [ "ultrasonic1:TRIG", "bb1:19t.b", "gold", [ "v0" ] ],
+    [ "ultrasonic1:ECHO", "bb1:20t.b", "#8f4814", [ "v0" ] ],
+    [ "lcd1:SDA", "uno:A4", "cyan", [ "h-38.4", "v374.6", "h245.4" ] ],
+    [ "lcd1:SCL", "uno:A5", "orange", [ "h-28.8", "v384.3", "h245.3" ] ],
+    [ "bb1:19t.c", "uno:9", "gold", [ "v0", "h-297.6" ] ],
+    [ "bb1:20t.d", "uno:10", "#8f4814", [ "v0", "h-326.4" ] ]
+  ],
+  "dependencies": {}
+}
